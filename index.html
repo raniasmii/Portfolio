@@ -38,7 +38,6 @@
             color: var(--white);
         }
 
-        /* CURSOR */
         .cursor {
             width: 20px;
             height: 20px;
@@ -70,7 +69,6 @@
             }
         }
 
-        /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
@@ -96,6 +94,7 @@
             letter-spacing: -1px;
             color: var(--white);
             text-transform: uppercase;
+            text-decoration: none;
         }
 
         .logo span {
@@ -241,7 +240,6 @@
         .mobile-menu.active a:nth-child(4) { transition-delay: 0.4s; }
         .mobile-menu.active a:nth-child(5) { transition-delay: 0.5s; }
 
-        /* HERO SECTION - NOUVEAU DESIGN */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -266,7 +264,7 @@
         }
 
         .hero-subtitle {
-            font-size: 0.9rem;
+            font-size: 1rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--pink);
@@ -291,7 +289,7 @@
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.8;
             margin-bottom: 1.5rem;
             color: #aaa;
@@ -300,7 +298,7 @@
         }
 
         .hero-text-fr {
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            font-size: clamp(1rem, 2vw, 1.2rem);
             line-height: 1.8;
             margin-bottom: 2.5rem;
             color: #999;
@@ -329,6 +327,7 @@
             position: relative;
             overflow: hidden;
             display: inline-block;
+            border-radius: 5px;
         }
 
         .hero-cta::before {
@@ -385,10 +384,10 @@
         .hero-image {
             width: 100%;
             height: 100%;
-            /*border-radius: 50%;*/
+            aspect-ratio: 1;
+            border-radius: 20px;
             overflow: hidden;
-           
-            box-shadow: 0 20px 60px rgba(214, 51, 132, 0.3);
+            box-shadow: 0 25px 60px rgba(214, 51, 132, 0.3);
             position: relative;
             z-index: 2;
         }
@@ -401,8 +400,8 @@
 
         .hero-placeholder {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--pink) 0%,#d63384 100%);
+            height: 150%;
+            background: linear-gradient(135deg, var(--pink) 0%, #ff6ba9 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -419,14 +418,14 @@
             animation: rotate 20s linear infinite;
         }
 
-        .decorative-circle:nth-child(1) {
+        .decorative-circle:nth-child(2) {
             width: 400px;
             height: 400px;
             top: -50px;
             right: -50px;
         }
 
-        .decorative-circle:nth-child(2) {
+        .decorative-circle:nth-child(3) {
             width: 300px;
             height: 300px;
             bottom: -30px;
@@ -451,7 +450,6 @@
             }
         }
 
-        /* ABOUT SECTION */
         .about {
             padding: 8rem 5%;
             background: var(--gray);
@@ -478,13 +476,29 @@
             color: var(--pink);
         }
 
-        .about-content {
-            max-width: 900px;
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #aaa;
+            margin-top: 1rem;
+        }
+
+        .about-content-card {
+            max-width: 1000px;
             margin: 0 auto;
+            background: var(--black);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--pink);
+        }
+
+        body.light-mode .about-content-card {
+            background: rgba(214, 51, 132, 0.05);
+            box-shadow: 0 20px 60px rgba(214, 51, 132, 0.1);
         }
 
         .about-content p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 2;
             color: #aaa;
             margin-bottom: 2rem;
@@ -495,7 +509,6 @@
             font-weight: 700;
         }
 
-        /* SERVICES SECTION */
         .services {
             padding: 8rem 5%;
             background: var(--black);
@@ -513,7 +526,9 @@
             background: var(--gray);
             padding: 3rem;
             border-left: 4px solid var(--pink);
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         body.light-mode .service-card {
@@ -522,16 +537,16 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(214, 51, 132, 0.2);
+            box-shadow: 0 25px 50px rgba(214, 51, 132, 0.3);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 900;
             margin-bottom: 1rem;
             text-transform: uppercase;
@@ -541,16 +556,108 @@
         .service-card p {
             color: #aaa;
             line-height: 1.8;
+            font-size: 1.05rem;
         }
 
-        /* SKILLS SECTION */
-        .skills {
+        .tools {
             padding: 8rem 5%;
             background: var(--gray);
         }
 
-        body.light-mode .skills {
+        body.light-mode .tools {
             background: var(--gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: var(--black);
+            padding: 2.5rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+        }
+
+        body.light-mode .tool-card {
+            background: rgba(214, 51, 132, 0.05);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--pink);
+            box-shadow: 0 20px 40px rgba(214, 51, 132, 0.3);
+        }
+
+        .tool-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-logo.photoshop {
+            background: linear-gradient(135deg, #001d34, #00658d);
+            color: #31a8ff;
+        }
+
+        .tool-logo.illustrator {
+            background: linear-gradient(135deg, #1a0700, #4f1600);
+            color: #ff9a00;
+        }
+
+        .tool-logo.indesign {
+            background: linear-gradient(135deg, #290015, #5e0029);
+            color: #ff3366;
+        }
+
+        .tool-logo.premiere {
+            background: linear-gradient(135deg, #00005b, #000f7d);
+            color: #9999ff;
+        }
+
+        .tool-logo.aftereffects {
+            background: linear-gradient(135deg, #00005b, #1a0042);
+            color: #9999ff;
+        }
+
+        .tool-logo.canva {
+            background: linear-gradient(135deg, #00c4cc, #7a24e7);
+            color: #ffffff;
+        }
+
+        .tool-logo.meta {
+            background: linear-gradient(135deg, #0866ff, #1877f2);
+            color: #ffffff;
+        }
+
+        .tool-logo.capcut {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: #ffffff;
+        }
+
+        .tool-card p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #aaa;
+        }
+
+        .skills {
+            padding: 8rem 5%;
+            background: var(--black);
         }
 
         .skills-container {
@@ -561,8 +668,20 @@
             gap: 4rem;
         }
 
+        .skill-group {
+            background: var(--gray);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--pink);
+        }
+
+        body.light-mode .skill-group {
+            background: rgba(214, 51, 132, 0.05);
+        }
+
         .skill-group h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 900;
             margin-bottom: 2rem;
             text-transform: uppercase;
@@ -574,7 +693,7 @@
         }
 
         .skill-list li {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             padding: 1rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
@@ -586,10 +705,13 @@
             color: var(--pink);
         }
 
-        /* PORTFOLIO */
         .portfolio {
             padding: 8rem 5%;
-            background: var(--black);
+            background: var(--gray);
+        }
+
+        body.light-mode .portfolio {
+            background: var(--gray);
         }
 
         .portfolio-grid {
@@ -606,6 +728,16 @@
             overflow: hidden;
             cursor: pointer;
             background: var(--gray);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(214, 51, 132, 0.4);
         }
 
         .portfolio-image {
@@ -658,7 +790,7 @@
         }
 
         .portfolio-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 900;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
@@ -666,25 +798,24 @@
 
         .portfolio-role {
             color: var(--pink);
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
             letter-spacing: 2px;
         }
 
         .portfolio-description {
             color: #aaa;
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.6;
         }
 
-        /* EXPERIENCE */
         .experience {
             padding: 8rem 5%;
-            background: var(--gray);
+            background: var(--black);
         }
 
         body.light-mode .experience {
-            background: var(--gray);
+            background: var(--black);
         }
 
         .experience-content {
@@ -693,25 +824,33 @@
         }
 
         .experience-item {
-            background: var(--black);
+            background: var(--gray);
             padding: 3rem;
             margin-bottom: 2rem;
             border-left: 4px solid var(--pink);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         body.light-mode .experience-item {
             background: rgba(214, 51, 132, 0.05);
         }
 
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(214, 51, 132, 0.3);
+        }
+
         .experience-item h3 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 900;
             margin-bottom: 0.5rem;
             color: var(--pink);
         }
 
         .experience-company {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #aaa;
             margin-bottom: 1rem;
         }
@@ -719,53 +858,446 @@
         .experience-item p {
             color: #999;
             line-height: 1.8;
+            font-size: 1.05rem;
         }
 
-        /* CONTACT */
-        .contact {
-            padding: 8rem 5%;
-            background: var(--black);
+        .contact-intro {
+            padding: 8rem 5% 4rem;
+            background: var(--gray);
             text-align: center;
         }
 
-        .contact-content {
-            max-width: 800px;
+        body.light-mode .contact-intro {
+            background: var(--gray);
+        }
+
+        .contact-intro-content {
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .contact h2 {
+        .contact-intro h2 {
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 900;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
         }
 
-        .contact p {
-            font-size: 1.2rem;
+        .contact-intro p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: #aaa;
             margin-bottom: 3rem;
+            line-height: 1.8;
         }
 
-        .contact-info {
+        .social-links-large {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link-large {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-link-large svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-link-large.linkedin {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+
+        .social-link-large.linkedin:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 119, 181, 0.5);
+        }
+
+        .social-link-large.facebook {
+            background: linear-gradient(135deg, #1877f2, #42b0ff);
+        }
+
+        .social-link-large.facebook:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(24, 119, 242, 0.5);
+        }
+
+        .social-link-large.instagram {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+        }
+
+        .social-link-large.instagram:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(131, 58, 180, 0.5);
+        }
+
+        .contact {
+            padding: 8rem 5%;
+            background: var(--black);
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .contact-description {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: #aaa;
+            margin-bottom: 4rem;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form-section {
+            background: var(--gray);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--pink);
+        }
+
+        body.light-mode .contact-form-section {
+            background: rgba(214, 51, 132, 0.05);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--pink);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            background: var(--black);
+            border: 2px solid rgba(214, 51, 132, 0.3);
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .form-group input,
+        body.light-mode .form-group textarea {
+            background: var(--white);
+            color: var(--pink);
+            border-color: var(--pink);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--pink);
+            box-shadow: 0 0 20px rgba(214, 51, 132, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            padding: 1.2rem 2.5rem;
+            background: var(--pink);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(214, 51, 132, 0.5);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Video Showcase Section */
+        .video-showcase {
+            padding: 6rem 5%;
+            background: var(--black);
+            overflow: hidden;
+        }
+
+        .video-showcase-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .video-showcase-header h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .video-showcase-header h2 span {
+            color: var(--pink);
+        }
+
+        .video-showcase-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #aaa;
+        }
+
+        .video-slider-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-slider {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .video-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .video-card {
+            min-width: 320px;
+            flex-shrink: 0;
+            background: var(--gray);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--pink);
+        }
+
+        body.light-mode .video-card {
+            background: rgba(214, 51, 132, 0.05);
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(214, 51, 132, 0.4);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--pink), #ff6ba9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail::before {
+            content: '▶';
+            font-size: 4rem;
+            color: white;
+            opacity: 0.9;
+            z-index: 2;
+            position: relative;
+        }
+
+        .video-card-content {
+            padding: 2rem;
+        }
+
+        .video-card-content h3 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            color: var(--pink);
+            text-transform: uppercase;
+        }
+
+        .video-card-content p {
+            font-size: 1rem;
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .video-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: var(--pink);
+            color: var(--white);
+            font-weight: 700;
+            border-radius: 20px;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--pink);
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.5);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .video-card {
+            animation: slideIn 0.6s ease forwards;
+        }
+
+        .video-card:nth-child(1) { animation-delay: 0.1s; }
+        .video-card:nth-child(2) { animation-delay: 0.2s; }
+        .video-card:nth-child(3) { animation-delay: 0.3s; }
+        .video-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info-section h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--pink);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--gray);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .contact-item {
+            background: rgba(214, 51, 132, 0.05);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(214, 51, 132, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--pink);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
             color: var(--pink);
         }
 
-        .social-links {
+        .contact-item p {
+            font-size: 1.05rem;
+            color: #aaa;
+        }
+
+        .social-links-contact {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .social-link {
@@ -779,6 +1311,7 @@
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 900;
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
 
@@ -786,9 +1319,9 @@
             background: var(--pink);
             border-color: var(--pink);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.5);
         }
 
-        /* FOOTER */
         footer {
             padding: 2rem 5%;
             background: var(--black);
@@ -801,7 +1334,17 @@
             font-size: 0.9rem;
         }
 
-        /* RESPONSIVE */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -817,6 +1360,11 @@
             }
 
             .skills-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -860,6 +1408,10 @@
                 text-align: center;
             }
 
+            .about-content-card {
+                padding: 2rem;
+            }
+
             .portfolio-grid,
             .services-grid {
                 grid-template-columns: 1fr;
@@ -869,171 +1421,34 @@
                 font-size: 2rem;
             }
 
-            .contact-info {
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .tool-logo {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .social-links-large {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+            }
+
+            .social-link-large {
+                justify-content: center;
             }
         }
-
-        /* SCROLL ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* ================================
-   PORTFOLIO CARDS SECTION
-================================ */
-.portfolio-cards {
-    padding: 8rem 5%;
-    background: var(--gray);
-}
-
-.portfolio-cards-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-}
-
-.portfolio-card {
-    background: var(--black);
-    border-left: 4px solid var(--pink);
-    transition: all 0.4s ease;
-    overflow: hidden;
-}
-
-body.light-mode .portfolio-card {
-    background: rgba(214, 51, 132, 0.05);
-}
-
-.portfolio-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px rgba(214, 51, 132, 0.25);
-}
-
-.portfolio-card-image {
-    height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    background: linear-gradient(135deg, var(--pink), #ff6ba9);
-}
-
-.portfolio-card-content {
-    padding: 2.2rem;
-}
-
-.portfolio-card-content h3 {
-    font-size: 1.4rem;
-    font-weight: 900;
-    margin-bottom: 0.8rem;
-    color: var(--pink);
-    text-transform: uppercase;
-}
-
-.portfolio-card-content p {
-    font-size: 0.95rem;
-    color: #aaa;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-}
-
-.portfolio-tag {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: var(--pink);
-    color: var(--white);
-    font-weight: 700;
-}
-
-/* ================================
-   TABLET VERSION (≤ 1024px)
-================================ */
-@media (max-width: 1024px) {
-    .portfolio-cards {
-        padding: 6rem 5%;
-    }
-
-    .portfolio-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .portfolio-card-image {
-        height: 200px;
-        font-size: 3.5rem;
-    }
-
-    .portfolio-card-content {
-        padding: 2rem;
-    }
-
-    .portfolio-card-content h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* ================================
-   MOBILE VERSION (≤ 768px)
-================================ */
-@media (max-width: 768px) {
-    .portfolio-cards {
-        padding: 5rem 5%;
-    }
-
-    .portfolio-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-    }
-
-    .portfolio-card {
-        transform: none;
-    }
-
-    .portfolio-card:hover {
-        transform: none;
-        box-shadow: none;
-    }
-
-    .portfolio-card-image {
-        height: 180px;
-        font-size: 3rem;
-    }
-
-    .portfolio-card-content {
-        padding: 1.6rem;
-    }
-
-    .portfolio-card-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .portfolio-card-content p {
-        font-size: 0.9rem;
-    }
-}
-
     </style>
 </head>
 <body>
-    <!-- Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Navigation -->
     <nav>
-        <a href="index.html"></a><div class="logo">RANIA <span>SMII</span></div></a>
+        <a href="#home" class="logo">RANIA <span>SMII</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -1054,7 +1469,6 @@ body.light-mode .portfolio-card {
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -1067,7 +1481,6 @@ body.light-mode .portfolio-card {
         </button>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
@@ -1082,9 +1495,8 @@ body.light-mode .portfolio-card {
             </div>
             <div class="hero-visual">
                 <div class="hero-image-wrapper">
-                   
                     <div class="hero-image">
-                        <img src="rony.jpg" alt="">
+                        <img class="hero-placeholder" src="rony.jpg" alt="">
                     </div>
                     <div class="decorative-circle"></div>
                     <div class="decorative-circle"></div>
@@ -1093,19 +1505,66 @@ body.light-mode .portfolio-card {
         </div>
     </section>
 
-    <!-- About Section -->
+    <section class="video-showcase fade-in">
+        <div class="video-showcase-header">
+            <h2>Video <span>Showcase</span></h2>
+            <p>Découvrez mes créations vidéo et contenus dynamiques</p>
+        </div>
+        <div class="video-slider-container">
+            <div class="video-slider" id="videoSlider">
+                <div class="video-card">
+                    <div class="video-thumbnail"></div>
+                    <div class="video-card-content">
+                        <h3>Social Media Reel</h3>
+                        <p>Création de contenu dynamique pour réseaux sociaux avec montage créatif.</p>
+                        <span class="video-tag">Instagram</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail"></div>
+                    <div class="video-card-content">
+                        <h3>Brand Story</h3>
+                        <p>Vidéo promotionnelle racontant l'histoire d'une marque avec impact visuel.</p>
+                        <span class="video-tag">Branding</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail"></div>
+                    <div class="video-card-content">
+                        <h3>Product Showcase</h3>
+                        <p>Mise en valeur de produits avec effets motion et transitions fluides.</p>
+                        <span class="video-tag">Commercial</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail"></div>
+                    <div class="video-card-content">
+                        <h3>Event Highlights</h3>
+                        <p>Résumé dynamique d'événements avec montage rythmé et captivant.</p>
+                        <span class="video-tag">Event</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevBtn">‹</button>
+                <button class="slider-btn" id="nextBtn">›</button>
+            </div>
+        </div>
+    </section>
+
     <section class="about fade-in" id="about">
         <div class="section-header">
             <h2>Who <span>I Am</span></h2>
         </div>
-        <div class="about-content">
-            <p>Je suis <span class="about-highlight">Rania Smii</span>, designer graphique et créative digitale passionnée par la construction d'identités visuelles fortes et d'expériences digitales engageantes.</p>
-            <p>J'associe le design créatif à la stratégie marketing pour aider les marques à communiquer efficacement, attirer la bonne audience et se démarquer dans un environnement digital compétitif.</p>
-            <p>Du branding aux contenus pour les réseaux sociaux, je crée des designs à la fois esthétiques, cohérents et orientés résultats.</p>
+        <div class="about-content-card">
+            <div class="about-content">
+                <p>Je suis <span class="about-highlight">Rania Smii</span>, designer graphique et créative digitale passionnée par la construction d'identités visuelles fortes et d'expériences digitales engageantes.</p>
+                <p>J'associe le design créatif à la stratégie marketing pour aider les marques à communiquer efficacement, attirer la bonne audience et se démarquer dans un environnement digital compétitif.</p>
+                <p>Du branding aux contenus pour les réseaux sociaux, je crée des designs à la fois esthétiques, cohérents et orientés résultats.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services fade-in" id="services">
         <div class="section-header">
             <h2>What <span>I Do</span></h2>
@@ -1134,10 +1593,49 @@ body.light-mode .portfolio-card {
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <section class="tools fade-in" id="tools">
+        <div class="section-header">
+            <h2>Tools <span>I Work With</span></h2>
+        </div>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-logo photoshop">Ps</div>
+                <p>Adobe Photoshop</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo illustrator">Ai</div>
+                <p>Adobe Illustrator</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo indesign">Id</div>
+                <p>Adobe InDesign</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo premiere">Pr</div>
+                <p>Premiere Pro</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo aftereffects">Ae</div>
+                <p>After Effects</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo canva">CV</div>
+                <p>Canva</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo meta">f</div>
+                <p>Meta Business</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-logo capcut">CC</div>
+                <p>CapCut</p>
+            </div>
+        </div>
+    </section>
+
     <section class="skills fade-in" id="skills">
         <div class="section-header">
-            <h2>Skills & <span>Tools</span></h2>
+            <h2>Skills & <span>Expertise</span></h2>
         </div>
         <div class="skills-container">
             <div class="skill-group">
@@ -1153,7 +1651,7 @@ body.light-mode .portfolio-card {
                 </ul>
             </div>
             <div class="skill-group">
-                <h3>Tools</h3>
+                <h3>Technical Tools</h3>
                 <ul class="skill-list">
                     <li>Photoshop</li>
                     <li>Illustrator</li>
@@ -1169,164 +1667,201 @@ body.light-mode .portfolio-card {
             </div>
         </div>
     </section>
-   
-    <!-- Portfolio Section -->
+
     <section class="portfolio fade-in" id="portfolio">
         <div class="section-header">
             <h2>Selected <span>Projects</span></h2>
-            <p>Here's a selection of projects that reflect my creative vision and digital expertise.</p>
+            <p class="section-subtitle">Here's a selection of projects that reflect my creative vision and digital expertise.</p>
         </div>
         <div class="portfolio-grid">
-            <a href="Ralinova.html">
-            <div class="portfolio-item">
+            <a href="#" class="portfolio-item">
                 <div class="portfolio-image">Ralinova</div>
                 <div class="portfolio-overlay">
                     <h3 class="portfolio-title">Ralinova</h3>
                     <p class="portfolio-role">Community Manager & Content Creator</p>
                     <p class="portfolio-description">Visual design, social media posts, reels, content planning. Goal: Increase brand visibility and engagement on social platforms.</p>
                 </div>
-            </div>
             </a>
-            <a href="fishHouse.html">
-            <div class="portfolio-item">
-                <div class="portfolio-image">Fish House </div>
+            <a href="#" class="portfolio-item">
+                <div class="portfolio-image">Fish House</div>
                 <div class="portfolio-overlay">
                     <h3 class="portfolio-title">Fish House</h3>
-                    <p class="portfolio-role">Social media management </p>
+                    <p class="portfolio-role">Social Media Management</p>
                     <p class="portfolio-description">Gestion des affichages de la page, du menu, des statistiques, ainsi que de tous les événements, des nouveaux plats et des offres.</p>
                 </div>
-            </div>
             </a>
-                        </a>
-            <a href="Freelance.html">
-            <div class="portfolio-item">
+            <a href="#" class="portfolio-item">
                 <div class="portfolio-image">FreeStyle</div>
                 <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">Freelance et freestyle</h3>
-                 
+                    <h3 class="portfolio-title">Freelance et Freestyle</h3>
                     <p class="portfolio-description">Ce portfolio présente des images freestyle, alliant créativité spontanée et techniques variées. Chaque œuvre montre un style unique et une grande liberté artistique, mettant en valeur diversité et originalité.</p>
                 </div>
-            </div>
             </a>
-            
         </div>
     </section>
-        
- <!-- Education Section -->
-<section class="experience fade-in" id="education">
-    <div class="section-header">
-        <h2>Academic <span>Background</span></h2>
-    </div>
-    <div class="experience-content">
-        <div class="experience-item">
-            <h3>Baccalaureate in Economics and Management</h3>
-            <p class="experience-company">2020</p>
-            <p>Fundamental knowledge in economics, management, accounting, and financial analysis.</p>
-        </div>
 
-        <div class="experience-item">
-            <h3>Bachelor’s Degree in Business Management</h3>
-            <p class="experience-company">ISET Radès — 2020 – 2023</p>
-            <p>Focused on business management, marketing, and entrepreneurship.</p>
+    <section class="experience fade-in" id="education">
+        <div class="section-header">
+            <h2>Academic <span>Background</span></h2>
         </div>
+        <div class="experience-content">
+            <div class="experience-item">
+                <h3>Baccalaureate in Economics and Management</h3>
+                <p class="experience-company">2020</p>
+                <p>Fundamental knowledge in economics, management, accounting, and financial analysis.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Bachelor's Degree in Business Management</h3>
+                <p class="experience-company">ISET Radès — 2020 – 2023</p>
+                <p>Focused on business management, marketing, and entrepreneurship.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Professional Master's Degree in Digital Management</h3>
+                <p class="experience-company">FSEG Tunis El Manar — 2023 – 2025</p>
+                <p>Advanced studies in digital management, strategy, and leadership.</p>
+            </div>
+        </div>
+    </section>
 
-        <div class="experience-item">
-            <h3>Professional Master’s Degree in Digital Management</h3>
-            <p class="experience-company">FSEG Tunis El Manar — 2023 – 2025</p>
-            <p>Advanced studies in digital management, strategy, and leadership.</p>
+    <section class="experience fade-in" id="experience">
+        <div class="section-header">
+            <h2>Professional <span>Experience</span></h2>
         </div>
-    </div>
-</section>
+        <div class="experience-content">
+            <div class="experience-item">
+                <h3>Community Manager – Freelance</h3>
+                <p class="experience-company">Fish House Ezzahra</p>
+                <p>Création de contenus visuels, gestion des réseaux sociaux et mise en place de stratégies digitales pour renforcer la présence en ligne.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Previous Experiences</h3>
+                <p>• Brand promotion & customer engagement<br>
+                   • Event & commercial animation<br>
+                   • Client communication & feedback collection</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Professional Experience Section -->
-<section class="experience fade-in" id="experience">
-    <div class="section-header">
-        <h2>Professional <span>Experience</span></h2>
-    </div>
-    <div class="experience-content">
-        <div class="experience-item">
-            <h3>Community Manager – Freelance</h3>
-            <p class="experience-company">Fish House Ezzahra</p>
-            <p>Création de contenus visuels, gestion des réseaux sociaux et mise en place de stratégies digitales pour renforcer la présence en ligne.</p>
+    <section class="experience fade-in" id="experience-academique">
+        <div class="section-header">
+            <h2>Expérience <span>Académique</span></h2>
         </div>
-        <div class="experience-item">
-            <h3>Previous Experiences</h3>
-            <p>• Brand promotion & customer engagement<br>
-               • Event & commercial animation<br>
-               • Client communication & feedback collection</p>
+        <div class="experience-content">
+            <div class="experience-item">
+                <h3>Mémoire – Stagiaire</h3>
+                <p class="experience-company">Hi Travel (Fév – Mai 2025)</p>
+                <p>Élaboration d'une stratégie digitale, gestion des réservations et actions de communication.</p>
+            </div>
+            <div class="experience-item">
+                <h3>PFE – Stagiaire</h3>
+                <p class="experience-company">SEMI Sarl (Mars – Mai 2024)</p>
+                <p>Création de supports digitaux, gestion de page Facebook, contribution à la stratégie de communication.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Stagiaire</h3>
+                <p class="experience-company">Mon-blanc Électroménager, Boumhal (Septembre 2021)</p>
+                <p>Service achats et exports.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Stagiaire</h3>
+                <p class="experience-company">Société Tunisienne d'Électricité et de Gaz (STEG), Ezzahra (Juin – Août 2020)</p>
+                <p>Observation dans les différents départements.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Academic Experience Section with same class -->
-<section class="experience fade-in" id="experience-academique">
-    <div class="section-header">
-        <h2>Expérience <span>Académique</span></h2>
-    </div>
-    <div class="experience-content">
-        <div class="experience-item">
-            <h3>Mémoire – Stagiaire</h3>
-            <p class="experience-company">Hi Travel (Fév – Mai 2025)</p>
-            <p>Élaboration d’une stratégie digitale, gestion des réservations et actions de communication.</p>
+    <section class="contact-intro fade-in">
+        <div class="contact-intro-content">
+            <h2>Have a project in mind?</h2>
+            <p>Let's turn your ideas into impactful digital experiences.</p>
+            <div class="social-links-large">
+                <a href="https://www.linkedin.com" target="_blank" class="social-link-large linkedin">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="social-link-large facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-link-large instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
         </div>
-        <div class="experience-item">
-            <h3>PFE – Stagiaire</h3>
-            <p class="experience-company">SEMI Sarl (Mars – Mai 2024)</p>
-            <p>Création de supports digitaux, gestion de page Facebook, contribution à la stratégie de communication.</p>
-        </div>
-        <div class="experience-item">
-            <h3>Stagiaire</h3>
-            <p class="experience-company">Mon-blanc Électroménager, Boumhal (Septembre 2021)</p>
-            <p>Service achats et exports.</p>
-        </div>
-        <div class="experience-item">
-            <h3>Stagiaire</h3>
-            <p class="experience-company">Société Tunisienne d'Électricité et de Gaz (STEG), Ezzahra (Juin – Août 2020)</p>
-            <p>Observation dans les différents départements.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-
-    <!-- Contact Section -->
     <section class="contact fade-in" id="contact">
         <div class="contact-content">
             <h2>Let's Create Something Impactful Together</h2>
-            <p>Ready to elevate your brand? Let's connect and bring your vision to life.</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📧</span>
-                    <span>raniasmii718@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    
-                </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>Tunisia</span>
-                </div>
-            </div>
+            <p class="contact-description">If you need help or want to collaborate, feel free to reach out using the form below, by email, or by phone. I'll be happy to connect with you.</p>
 
-            <div class="social-links">
-                <a href="#" class="social-link" title="LinkedIn">LI</a>
-                <a href="#" class="social-link" title="Instagram">IG</a>
-                <a href="#" class="social-link" title="Behance">BE</a>
-                <a href="#" class="social-link" title="Dribbble">DR</a>
+            <div class="contact-wrapper">
+                <div class="contact-form-section">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/raniasmii718@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-section">
+                    <h3>Direct Contact</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:raniasmii718@gmail.com">raniasmii718@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p class="contact-label">Location</p>
+                            <p>Tunisia</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links-contact">
+                        <a href="https://www.linkedin.com" target="_blank" class="social-link" title="LinkedIn">LI</a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-link" title="Instagram">IG</a>
+                        <a href="https://www.behance.net" target="_blank" class="social-link" title="Behance">BE</a>
+                        <a href="https://dribbble.com" target="_blank" class="social-link" title="Dribbble">DR</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 RANIA SMII. All rights reserved. Crafted with passion.</p>
     </footer>
 
     <script>
-        // Custom Cursor
         const cursor = document.querySelector('.cursor');
         const cursorFollower = document.querySelector('.cursor-follower');
-        
+
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
         let followerX = 0, followerY = 0;
@@ -1351,7 +1886,7 @@ body.light-mode .portfolio-card {
         }
         animateCursor();
 
-        document.querySelectorAll('a, button, .portfolio-item').forEach(el => {
+        document.querySelectorAll('a, button, .portfolio-item, .service-card, .tool-card, .experience-item').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'translate(-50%, -50%) scale(2)';
                 cursorFollower.style.transform = 'translate(-50%, -50%) scale(2)';
@@ -1362,7 +1897,6 @@ body.light-mode .portfolio-card {
             });
         });
 
-        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const themeToggleMobile = document.getElementById('themeToggleMobile');
         const body = document.body;
@@ -1380,7 +1914,6 @@ body.light-mode .portfolio-card {
         themeToggle.addEventListener('click', toggleTheme);
         themeToggleMobile.addEventListener('click', toggleTheme);
 
-        // Mobile Menu
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
 
@@ -1398,7 +1931,6 @@ body.light-mode .portfolio-card {
             });
         });
 
-        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1412,7 +1944,6 @@ body.light-mode .portfolio-card {
             });
         });
 
-        // Scroll Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1430,21 +1961,32 @@ body.light-mode .portfolio-card {
             observer.observe(el);
         });
 
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Video Slider Controls
+        const videoSlider = document.getElementById('videoSlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        if (prevBtn && nextBtn && videoSlider) {
+            prevBtn.addEventListener('click', () => {
+                videoSlider.scrollBy({
+                    left: -340,
+                    behavior: 'smooth'
+                });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                videoSlider.scrollBy({
+                    left: 340,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
         console.log('%c RANIA SMII ', 'background: #d63384; color: white; font-size: 24px; font-weight: bold; padding: 10px;');
         console.log('%c Digital Creative Designer ', 'background: black; color: #d63384; font-size: 16px; padding: 5px;');
-        // Portfolio Cards Hover Cursor Effect
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(2)';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-
     </script>
 </body>
 </html>
